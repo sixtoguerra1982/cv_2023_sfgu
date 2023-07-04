@@ -3,10 +3,13 @@ const app = express();
 const PORT = 3000;
 const HOST = 'http://localhost';
 
+
+app.use(express.static("./www"));
+
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.sendFile('index.html')
 })
 
 app.listen(PORT, () => {
-  console.log(`Listening Express on !!! ${HOST}:${PORT}`);
+  console.log(`Listening Express on !!!! ${HOST}:${PORT}`);
 })
